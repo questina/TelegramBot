@@ -1,10 +1,11 @@
 import config
 import utils
 import telebot
+import tb_token
 
 use_inline_markup = True
 
-bot = telebot.TeleBot(config.token)
+bot = telebot.TeleBot(tb_token.token)
 
 
 @bot.message_handler(func=lambda query: True, commands=['enter'])

@@ -1,6 +1,5 @@
 import telebot
 import random
-import sys
 
 def generate_markup(buttons):
     markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
@@ -14,9 +13,6 @@ def generate_markup(buttons):
 
 
 def generate_inline_markup(buttons):
-    for item in buttons:
-        print(sys.getsizeof(item))
-        print(sys.getsizeof(buttons[item]))
     keyboard = [telebot.types.InlineKeyboardButton(item, callback_data=buttons[item]) for item in buttons]
     random.shuffle(keyboard)
     markup = telebot.types.InlineKeyboardMarkup()
